@@ -1,74 +1,205 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OverFit US</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OverFit – Less Pain. More Life.</title>
   <style>
     body {
-      background-color: #111;
-      color: #f1f1f1;
+      margin: 0;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    h1 {
-      color: #facc15; /* amarelo */
-    }
-    p {
-      margin-top: -10px;
-      color: #ccc;
-    }
-    .button {
-      display: inline-block;
-      background-color: #2563eb; /* azul */
+      background: #000;
       color: #fff;
-      padding: 12px 24px;
-      margin: 15px;
+    }
+    header, footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      color: #f1c40f;
+      margin: 0 0 10px;
+    }
+    nav a {
+      color: #3498db;
+      margin: 0 15px;
       text-decoration: none;
-      border-radius: 8px;
       font-weight: bold;
-      transition: background 0.3s;
     }
-    .button:hover {
-      background-color: #1e40af;
+    .btn-yellow {
+      background: #f1c40f;
+      color: #000;
+      padding: 12px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 10px 0 0;
+      display: inline-block;
+      min-width: 140px;
+      text-align: center;
+      text-decoration: none;
     }
-    .section {
-      margin: 40px 0;
+    section {
+      padding: 40px 20px;
+      border-bottom: 1px solid #222;
     }
-    img {
-      max-width: 180px;
-      margin-bottom: 20px;
+    h2 {
+      color: #f1c40f;
+    }
+    .cta {
+      text-align: center;
+      padding: 60px 20px;
+      background: #222;
+    }
+    .cta h1 {
+      color: #f1c40f;
+      font-size: 2em;
+    }
+    .cta p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    .footer-links a {
+      color: #3498db;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .hidden {
+      display: none;
+    }
+    /* Center the welcome container */
+    #welcome-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: #f1c40f;
+      text-align: center;
+      padding: 0 20px;
     }
   </style>
+  <script>
+    // Guarda idioma selecionado para usar depois (se quiser expandir)
+    let selectedLang = null;
+
+    function selectLanguage(lang) {
+      selectedLang = lang;
+      document.getElementById('welcome-container').classList.add('hidden');
+      document.getElementById('main-content').classList.remove('hidden');
+      
+      // Pode aqui mudar textos, links e botões para o idioma selecionado.
+      // Por ora, só modifico o título de boas-vindas conforme idioma:
+      const titles = {
+        en: 'Welcome!',
+        br: 'Bem-vindo!',
+        es: '¡Bienvenido!',
+        it: 'Benvenuto!'
+      };
+      document.getElementById('welcome-title').textContent = titles[lang] || 'Welcome!';
+      
+      // Também muda os textos da seção Payments & Contact
+      if (lang === 'br') {
+        document.getElementById('brazil-section').classList.remove('hidden');
+        document.getElementById('usa-section').classList.add('hidden');
+      } else if (lang === 'us' || lang === 'en') {
+        document.getElementById('usa-section').classList.remove('hidden');
+        document.getElementById('brazil-section').classList.add('hidden');
+      } else {
+        // Se quiser, pode esconder ambos ou personalizar para es/it
+        document.getElementById('brazil-section').classList.add('hidden');
+        document.getElementById('usa-section').classList.add('hidden');
+      }
+    }
+
+    function showCountrySection(country) {
+      const brSection = document.getElementById('brazil-section');
+      const usSection = document.getElementById('usa-section');
+      if (country === 'br') {
+        brSection.classList.remove('hidden');
+        usSection.classList.add('hidden');
+      } else if (country === 'us') {
+        usSection.classList.remove('hidden');
+        brSection.classList.add('hidden');
+      }
+      document.getElementById('payment-contact').scrollIntoView({behavior: 'smooth'});
+    }
+  </script>
 </head>
 <body>
 
-  <img src="logo.png" alt="Logo OverFit" />
-
-  <h1>Onde você está?</h1>
-  <p>Escolha sua localização para agendar suas aulas</p>
-
-  <div class="section">
-    <a href="#brasil" class="button">🇧🇷 Brasil</a>
-    <a href="#usa" class="button">🇺🇸 USA</a>
+  <!-- Tela inicial de boas-vindas e seleção de idioma -->
+  <div id="welcome-container">
+    <h1 id="welcome-title">Welcome!</h1>
+    <p>Please select your language / Por favor selecione seu idioma / Por favor seleccione su idioma / Per favore seleziona la tua lingua</p>
+    <div>
+      <button class="btn-yellow" onclick="selectLanguage('en')">US English</button>
+      <button class="btn-yellow" onclick="selectLanguage('br')">BR Português</button>
+      <button class="btn-yellow" onclick="selectLanguage('es')">ES Español</button>
+      <button class="btn-yellow" onclick="selectLanguage('it')">IT Italiano</button>
+    </div>
   </div>
 
-  <div id="brasil" class="section">
-    <h2>Bem-vindo, Brasil 🇧🇷</h2>
-    <a href="https://calendly.com/raphaovera/30min" class="button">Avaliação gratuita</a>
-    <a href="https://meet.google.com/" class="button">Aula ao vivo no Google Meet</a>
-    <a href="https://wa.me/5512999999999" class="button">Agendar pelo WhatsApp</a>
-    <p><strong>Pagamento via PIX com 6% de desconto:</strong> <br> difranco.rapha@gmail.com</p>
-  </div>
+  <!-- Conteúdo principal que aparece após escolha de idioma -->
+  <div id="main-content" class="hidden">
 
-  <div id="usa" class="section">
-    <h2>Welcome, USA 🇺🇸</h2>
-    <a href="https://calendly.com/raphaovera/30min" class="button">Free Evaluation</a>
-    <a href="https://meet.google.com/" class="button">Live Session on Google Meet</a>
-    <a href="sms:+11234567890" class="button">Book via SMS</a>
-    <p><strong>Beach Workouts:</strong> <br> Sunrise or Sunset by reservation only</p>
-  </div>
+    <header>
+      <h1>OverFit – Less Pain. More Life.</h1>
+      <nav>
+        <a href="#sunset">Sunset/Sunrise</a>
+        <a href="#online">Online</a>
+        <a href="#payment-contact">Payments</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="btn-yellow" onclick="showCountrySection('br')">I am in Brazil</button>
+      <button class="btn-yellow" onclick="showCountrySection('us')">I am in the USA</button>
+    </header>
 
-</body>
-</html>
+    <section class="cta">
+      <h1>Less Pain. More Life.</h1>
+      <p>Live physical and cardiac rehab workouts – at the beach or online.</p>
+      <a href="https://calendly.com/raphaovera/30min" class="btn-yellow">Book your free evaluation</a>
+    </section>
+
+    <section id="sunset">
+      <h2>Sunset or Sunrise Classes in Florida</h2>
+      <p>Every day at 7 a.m., booking required by 10 p.m. the night before.</p>
+      <p>Location: Cocoa Beach – customized for pain relief, weakness, and rehab.</p>
+      <a href="https://calendly.com/raphaovera/30min" class="btn-yellow">Book in-person session</a>
+    </section>
+
+    <section id="online">
+      <h2>Live Online Class</h2>
+      <p>Google Meet sessions tailored to your pain, style, and routine – from anywhere in the world.</p>
+      <a href="https://calendly.com/raphaovera/30min" class="btn-yellow">Book online session</a>
+    </section>
+
+    <section id="payment-contact">
+      <h2>Payments & Contact</h2>
+
+      <div id="brazil-section" class="">
+        <h3>For Clients in Brazil 🇧🇷</h3>
+        <p>Pix with 6% discount → <strong>difranco.rapha@gmail.com</strong></p>
+        <p>Contact via WhatsApp</p>
+        <a href="https://wa.me/5511999999999" class="btn-yellow" target="_blank" rel="noopener">WhatsApp Rapha</a>
+      </div>
+
+      <div id="usa-section" class="hidden">
+        <h3>For Clients in the USA 🇺🇸</h3>
+        <p>Zelle (same email)</p>
+        <p>Contact via SMS</p>
+        <a href="sms:+1XXXXXXXXXX" class="btn-yellow">Text Rapha via SMS</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Rapha</h2>
+      <p>Specialist in physical and cardiac rehab with experience in Brazil, Italy, Paris, and the USA. Clinical method + movement + laser therapy.</p>
+      <p><strong>“I eliminate pain, fat, and weakness with soul, technique, and love.”</strong></p>
+    </section>
+
+    <footer>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/overfit" target="_blank">Instagr_
