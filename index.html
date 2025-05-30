@@ -8,99 +8,94 @@
     body {
       background-color: #111;
       color: #f1f1f1;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
     }
     header {
       background-color: #000;
-      padding: 1rem;
+      padding: 2rem 1rem;
       text-align: center;
       border-bottom: 3px solid #FFD700;
     }
     header h1 {
-      margin: 0;
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
       color: #FFD700;
+      letter-spacing: 1px;
+    }
+    header h2 {
       font-size: 1.8rem;
+      margin: 0.5rem 0;
+      color: #f1f1f1;
+      font-weight: 300;
+    }
+    header h3 {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #FFD700;
+      font-style: italic;
+    }
+    .logo {
+      display: block;
+      margin: 1rem auto;
+      max-width: 250px;
+      filter: drop-shadow(2px 2px 10px #FFD700);
     }
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       background-color: #000;
-      padding: 1rem;
+      padding: 2rem 1rem;
+      gap: 1rem;
     }
     nav a {
       color: #00BFFF;
+      background-color: #222;
+      border: 1px solid #444;
+      border-radius: 10px;
       text-decoration: none;
-      margin: 0.5rem 1rem;
+      padding: 0.75rem 1.5rem;
       font-weight: bold;
-      transition: color 0.3s;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
     nav a:hover {
-      color: #FFD700;
+      background-color: #FFD700;
+      color: #000;
+      transform: translateY(-3px);
     }
     main {
       padding: 2rem;
       text-align: center;
     }
-    .button {
-      display: inline-block;
-      margin: 1rem;
-      padding: 1rem 2rem;
-      background-color: #FFD700;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background-color 0.3s;
-    }
-    .button:hover {
-      background-color: #00BFFF;
-      color: #fff;
-    }
-    .language-select {
-      margin-bottom: 2rem;
-    }
-    .language-select select {
-      padding: 0.5rem;
-      font-size: 1rem;
+    h2 {
+      font-weight: normal;
+      margin-bottom: 1.5rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome – Make Your Body Great Again</h1>
+    <img src="logo-overfit.png.png" alt="OverFit Logo" class="logo">
+    <h1>Welcome</h1>
+    <h2>Make Your Body Great Again</h2>
+    <h3>Less Pain, More Life</h3>
   </header>
 
-  <nav>
-    <a href="#" onclick="changeLanguage('en')">🇺🇸 English</a>
-    <a href="#" onclick="changeLanguage('pt')">🇧🇷 Português</a>
-    <a href="#" onclick="changeLanguage('es')">🇪🇸 Español</a>
-    <a href="#" onclick="changeLanguage('it')">🇮🇹 Italiano</a>
-  </nav>
-
   <main>
-    <h2>Are you in the USA or another country?</h2>
-    <p>Select your region to continue with scheduling and payment methods.</p>
-
-    <a class="button" href="avaliacao.html">Free Evaluation</a>
-    <a class="button" href="beach.html">Sunrise/Sunset Class – coco beach</a>
-    <a class="button" href="meet.html">Live Online Class</a>
+    <h2>Please select your language</h2>
+    <nav>
+      <a href="usa.html">🇺🇸 English</a>
+      <a href="brasil.html">🇧🇷 Português</a>
+      <a href="espanol.html">🇪🇸 Español</a>
+      <a href="italiano.html">🇮🇹 Italiano</a>
+    </nav>
   </main>
-
-  <script>
-    function changeLanguage(lang) {
-      if (lang === 'pt') {
-        window.location.href = 'brasil.html';
-      } else if (lang === 'en') {
-        window.location.href = 'usa.html';
-      } else if (lang === 'es') {
-        window.location.href = 'espanol.html';
-      } else if (lang === 'it') {
-        window.location.href = 'italiano.html';
-      }
-    }
-  </script>
 </body>
 </html>
