@@ -1,81 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OverFit USA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OverFit – Live Pain-Free. Anywhere. Anytime.</title>
   <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
+    body { margin:0; font-family: 'Arial', sans-serif; background:#000; color:#fff; }
+    header, footer { background:#111; padding:20px; text-align:center; }
+    header img { max-width: 180px; margin-bottom: 10px; }
+    nav a { color:#3498db; margin:0 15px; text-decoration:none; font-weight:bold; }
+    .country-select {
+      background:#f1c40f; color:#000; padding:12px 28px; font-weight:bold;
+      border:none; border-radius:8px; cursor:pointer; margin:10px 12px;
+      font-size:1rem; transition: background 0.3s ease;
+    }
+    .country-select:hover {
+      background:#d4ac0d;
+    }
+    section { padding:40px 20px; border-bottom:1px solid #222; max-width: 720px; margin: auto; }
+    h1, h2 {
+      color:#f1c40f;
+      margin-bottom: 10px;
+    }
+    p { font-size:1.1rem; line-height:1.5; margin-top:0; }
+    button, a.button {
+      display:inline-block;
+      padding:14px 32px;
+      margin:15px 10px 0 0;
+      background:#f1c40f;
+      color:#000;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:bold;
+      cursor:pointer;
+      font-size:1.1rem;
+      transition: background 0.3s ease;
+      border:none;
+    }
+    button:hover, a.button:hover {
+      background:#d4ac0d;
+    }
+    .cta {
+      text-align:center; padding:80px 20px 60px;
+      background:#111;
+      max-width: 720px;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 25px #f1c40f88;
+    }
+    #payment-contact {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      border-radius: 12px;
+      background: #111;
+      box-shadow: 0 0 20px #f1c40f55;
+    }
+    #payment-contact h2 {
       text-align: center;
     }
-    header {
-      padding: 2rem;
-      border-bottom: 2px solid #FFD700;
-    }
-    h1 {
-      color: #FFD700;
-      font-size: 2rem;
-    }
-    h2 {
-      color: #00BFFF;
-      font-weight: normal;
-      margin-bottom: 2rem;
-    }
-    .button {
-      display: block;
-      width: 80%;
-      max-width: 400px;
-      margin: 1rem auto;
-      padding: 1rem;
-      background: #FFD700;
-      color: #111;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .button:hover {
-      background: #00BFFF;
-      color: #fff;
+    .payment-info {
+      margin-top: 25px;
+      font-size: 1.1rem;
+      text-align: center;
     }
     footer {
-      margin-top: 2rem;
-      padding: 1rem;
       font-size: 0.9rem;
-      background: #000;
-      color: #999;
+      color: #777;
+      padding-bottom: 15px;
+    }
+    .footer-links a {
+      color:#3498db;
+      margin: 0 12px;
+      text-decoration:none;
+      font-weight:bold;
+      font-size: 1.05rem;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to OverFit USA 🇺🇸</h1>
-    <h2>Less Pain. More Life. Anywhere in the World.</h2>
+    <img src="logo-overfit.png" alt="OverFit Logo" />
+    <nav>
+      <a href="#sunset">Sunset & Sunrise Wellness</a>
+      <a href="#online">Live Classes</a>
+      <a href="https://www.youtube.com/overfit" target="_blank">Recorded Classes</a>
+    </nav>
+    <div>
+      <button class="country-select" onclick="window.location.href='https://calendly.com/raphaovera/30min'">Book a Free Evaluation</button>
+      <button class="country-select" onclick="window.location.href='https://calendly.com/raphaovera/30min'">Anywhere. Anytime.</button>
+    </div>
   </header>
 
-  <a class="button" href="https://calendly.com/raphaovera/30min" target="_blank">
-    📅 Free Evaluation – Schedule Now
-  </a>
+  <section class="cta">
+    <h1>I kill your pain, fat, and weakness with science, heart, and movement </h1>
+    <p> Live Pain-Free Anywhere Anytime </p>
+    <a href="https://calendly.com/raphaovera/30min" class="button">Book Your Free Evaluation – Tell Me Your Problem</a>
+  </section>
 
-  <a class="button" href="sms:+18329033668">
-    📲 Contact via SMS (USA Only)
-  </a>
+  <section id="sunset">
+    <h2>Sunset & Sunrise Wellness</h2>
+    <p>Every day at 7 a.m. (Sunrise) – book by 10 p.m. the night before.</p>
+    <p>Every day at 7 p.m. (Sunset) – book by 4 p.m. the same day.</p>
+    <p>Location: Cocoa Beach – Redefine your body through natural movement and ocean energy.</p>
+    <a href="https://calendly.com/raphaovera/30min" class="button">Join the Experience</a>
+  </section>
 
-  <a class="button" href="https://meet.google.com" target="_blank">
-    🎥 Live Class via Google Meet
-  </a>
+  <section id="online">
+    <h2>Live Personalized Classes</h2>
+    <p>Google Meet sessions for pain relief, strength, and fat burn. Designed just for you.</p>
+    <a href="https://calendly.com/raphaovera/30min" class="button">Book a Session</a>
+  </section>
 
-  <a class="button" href="https://wa.me/18329033668?text=I%20want%20to%20book%20a%20sunset%20class%20at%20Cocoa%20Beach" target="_blank">
-    🌅 Book Sunset or Sunrise Class at Cocoa Beach
-  </a>
+  <section id="payment-contact">
+    <h2>Payments & Contact</h2>
+    <div class="payment-info" id="contact-info">
+      <p>Loading payment options...</p>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 OverFit International LLC. All rights reserved.
+    <div class="footer-links">
+      <a href="https://www.instagram.com/overfit" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/overfit" target="_blank">YouTube</a>
+      <a href="https://linktr.ee/overfit" target="_blank">Linktree</a>
+    </div>
+    <p>Note: Sunset classes must be booked by 10 p.m. the night before. Sunrise classes must be booked by 4 p.m. same day.</p>
+    <p>© 2025 OverFit – All rights reserved.</p>
   </footer>
+
+  <script>
+    fetch('https://ipapi.co/json')
+      .then(response => response.json())
+      .then(data => {
+        const country = data.country_code;
+        const contactInfo = document.getElementById('contact-info');
+        if (country === 'BR') {
+          contactInfo.innerHTML = `
+            <p>Para clientes do Brasil 🇧🇷</p>
+            <p>PIX com 6% de desconto: <strong>difranco.rapha@gmail.com</strong></p>
+            <p><a href="https://wa.me/5511999999999" class="button" target="_blank">Fale com a Rapha no WhatsApp</a></p>
+          `;
+        } else {
+          contactInfo.innerHTML = `
+            <p>For USA 🇺🇸 Clients</p>
+            <p>Zelle: <strong>difranco.rapha@gmail.com</strong></p>
+            <p><a href="sms:+13214744679" class="button">Text Rapha</a></p>
+          `;
+        }
+      });
+  </script>
 </body>
 </html>
