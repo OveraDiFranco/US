@@ -68,7 +68,6 @@
     .hidden {
       display: none;
     }
-    /* Center the welcome container */
     #welcome-container {
       height: 100vh;
       display: flex;
@@ -80,18 +79,20 @@
       text-align: center;
       padding: 0 20px;
     }
+    .lang-text {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin: 10px 0 20px;
+    }
   </style>
   <script>
-    // Guarda idioma selecionado para usar depois (se quiser expandir)
     let selectedLang = null;
 
     function selectLanguage(lang) {
       selectedLang = lang;
       document.getElementById('welcome-container').classList.add('hidden');
       document.getElementById('main-content').classList.remove('hidden');
-      
-      // Pode aqui mudar textos, links e botões para o idioma selecionado.
-      // Por ora, só modifico o título de boas-vindas conforme idioma:
+
       const titles = {
         en: 'Welcome!',
         br: 'Bem-vindo!',
@@ -99,8 +100,7 @@
         it: 'Benvenuto!'
       };
       document.getElementById('welcome-title').textContent = titles[lang] || 'Welcome!';
-      
-      // Também muda os textos da seção Payments & Contact
+
       if (lang === 'br') {
         document.getElementById('brazil-section').classList.remove('hidden');
         document.getElementById('usa-section').classList.add('hidden');
@@ -108,7 +108,6 @@
         document.getElementById('usa-section').classList.remove('hidden');
         document.getElementById('brazil-section').classList.add('hidden');
       } else {
-        // Se quiser, pode esconder ambos ou personalizar para es/it
         document.getElementById('brazil-section').classList.add('hidden');
         document.getElementById('usa-section').classList.add('hidden');
       }
@@ -124,7 +123,7 @@
         usSection.classList.remove('hidden');
         brSection.classList.add('hidden');
       }
-      document.getElementById('payment-contact').scrollIntoView({behavior: 'smooth'});
+      document.getElementById('payment-contact').scrollIntoView({ behavior: 'smooth' });
     }
   </script>
 </head>
@@ -133,7 +132,12 @@
   <!-- Tela inicial de boas-vindas e seleção de idioma -->
   <div id="welcome-container">
     <h1 id="welcome-title">Welcome!</h1>
-    <p>Please select your language / Por favor selecione seu idioma / Por favor seleccione su idioma / Per favore seleziona la tua lingua</p>
+    <p class="lang-text">
+      Please select your language / <br />
+      Por favor selecione seu idioma / <br />
+      Por favor seleccione su idioma / <br />
+      Per favore seleziona la tua lingua
+    </p>
     <div>
       <button class="btn-yellow" onclick="selectLanguage('en')">US English</button>
       <button class="btn-yellow" onclick="selectLanguage('br')">BR Português</button>
@@ -142,62 +146,63 @@
     </div>
   </div>
 
-  <!-- Conteúdo principal que aparece após escolha de idioma -->
+  <!-- Conteúdo principal -->
   <div id="main-content" class="hidden">
 
     <header>
       <h1>OverFit – Less Pain. More Life.</h1>
       <nav>
-        <a href="#sunset">Sunset/Sunrise</a>
+        <a href="#sunset">Sunrise/Sunset</a>
         <a href="#online">Online</a>
-        <a href="#payment-contact">Payments</a>
+        <a href="#payment-contact">Contact</a>
         <a href="#about">About</a>
       </nav>
-      <button class="btn-yellow" onclick="showCountrySection('br')">I am in Brazil</button>
-      <button class="btn-yellow" onclick="showCountrySection('us')">I am in the USA</button>
+      <button class="btn-yellow" onclick="showCountrySection('br')">Estou no Brasil</button>
+      <button class="btn-yellow" onclick="showCountrySection('us')">I'm in the USA</button>
     </header>
 
     <section class="cta">
-      <h1>Less Pain. More Life.</h1>
-      <p>Live physical and cardiac rehab workouts – at the beach or online.</p>
-      <a href="https://calendly.com/raphaovera/30min" class="btn-yellow">Book your free evaluation</a>
+      <h1>Menos Dor. Mais Vida.</h1>
+      <p>Treinos ao vivo para reabilitação física e cardíaca – na praia ou online.</p>
+      <a href="https://calendly.com/raphaovera/30min" class="btn-yellow">Agende sua avaliação gratuita</a>
     </section>
 
     <section id="sunset">
-      <h2>Sunset or Sunrise Classes in Florida</h2>
-      <p>Every day at 7 a.m., booking required by 10 p.m. the night before.</p>
-      <p>Location: Cocoa Beach – customized for pain relief, weakness, and rehab.</p>
-      <a href="https://calendly.com/raphaovera/30min" class="btn-yellow">Book in-person session</a>
+      <h2>Treinos ao Amanhecer ou Entardecer – Flórida</h2>
+      <p>Todos os dias às 7h da manhã – agende até às 22h do dia anterior.</p>
+      <p>Local: Cocoa Beach – personalização total para dor, fraqueza e reabilitação.</p>
+      <a href="https://calendly.com/raphaovera/30min" class="btn-yellow">Agendar presencial</a>
     </section>
 
     <section id="online">
-      <h2>Live Online Class</h2>
-      <p>Google Meet sessions tailored to your pain, style, and routine – from anywhere in the world.</p>
-      <a href="https://calendly.com/raphaovera/30min" class="btn-yellow">Book online session</a>
+      <h2>Aulas Online ao Vivo</h2>
+      <p>Via Google Meet, com personalização total para sua dor, rotina e objetivos – esteja onde estiver.</p>
+      <a href="https://calendly.com/raphaovera/30min" class="btn-yellow">Agendar online</a>
     </section>
 
     <section id="payment-contact">
-      <h2>Payments & Contact</h2>
+      <h2>Pagamento & Contato</h2>
 
-      <div id="brazil-section" class="">
-        <h3>For Clients in Brazil 🇧🇷</h3>
-        <p>Pix with 6% discount → <strong>difranco.rapha@gmail.com</strong></p>
-        <p>Contact via WhatsApp</p>
-        <a href="https://wa.me/5511999999999" class="btn-yellow" target="_blank" rel="noopener">WhatsApp Rapha</a>
+      <div id="brazil-section">
+        <h3>Para clientes no Brasil 🇧🇷</h3>
+        <p>PIX com 6% de desconto → <strong>difranco.rapha@gmail.com</strong></p>
+        <p>Fale comigo no WhatsApp</p>
+        <a href="https://wa.me/5511999999999" class="btn-yellow" target="_blank" rel="noopener">Abrir WhatsApp</a>
       </div>
 
       <div id="usa-section" class="hidden">
-        <h3>For Clients in the USA 🇺🇸</h3>
-        <p>Zelle (same email)</p>
-        <p>Contact via SMS</p>
-        <a href="sms:+1XXXXXXXXXX" class="btn-yellow">Text Rapha via SMS</a>
+        <h3>For clients in the USA 🇺🇸</h3>
+        <p>Zelle (use the same email): <strong>difranco.rapha@gmail.com</strong></p>
+        <p>Text me and let’s connect!</p>
+        <a href="sms:+1XXXXXXXXXX" class="btn-yellow">Send SMS to Rapha</a>
       </div>
     </section>
 
     <section id="about">
-      <h2>About Rapha</h2>
-      <p>Specialist in physical and cardiac rehab with experience in Brazil, Italy, Paris, and the USA. Clinical method + movement + laser therapy.</p>
-      <p><strong>“I eliminate pain, fat, and weakness with soul, technique, and love.”</strong></p>
+      <h2>Sobre Rapha</h2>
+      <p>Especialista em reabilitação física e cardíaca, com experiência internacional no Brasil, Itália, Paris e EUA.</p>
+      <p>Método clínico, movimento consciente e laserterapia.</p>
+      <p><strong>"Elimino dores, gorduras e fraquezas com alma, técnica e amor."</strong></p>
     </section>
 
     <footer>
@@ -206,10 +211,34 @@
         <a href="https://www.youtube.com/overfit" target="_blank">YouTube</a>
         <a href="https://linktr.ee/overfit" target="_blank">Linktree</a>
       </div>
-      <p style="margin-top: 10px; font-size: 0.9em;">© 2025 OverFit – All rights reserved.</p>
+      <p style="margin-top: 10px; font-size: 0.9em;">© 2025 OverFit – Todos os direitos reservados.</p>
     </footer>
 
   </div>
 
 </body>
+      <div id="es-section" class="hidden">
+        <h3>Para clientes en Brasil 🇧🇷</h3>
+        <p>PIX con 6% de descuento → <strong>difranco.rapha@gmail.com</strong></p>
+        <p>Hablemos por WhatsApp</p>
+        <a href="https://wa.me/5511999999999" class="btn-yellow" target="_blank" rel="noopener">Abrir WhatsApp</a>
+
+        <h3>Para clientes en EE.UU. 🇺🇸</h3>
+        <p>Zelle (usa el mismo correo): <strong>difranco.rapha@gmail.com</strong></p>
+        <p>Envíame un mensaje y empecemos</p>
+        <a href="sms:+1XXXXXXXXXX" class="btn-yellow">Enviar SMS a Rapha</a>
+      </div>
+
+      <div id="it-section" class="hidden">
+        <h3>Per i clienti in Brasile 🇧🇷</h3>
+        <p>Pagamento con PIX con 6% di sconto → <strong>difranco.rapha@gmail.com</strong></p>
+        <p>Scrivimi su WhatsApp</p>
+        <a href="https://wa.me/5511999999999" class="btn-yellow" target="_blank" rel="noopener">Apri WhatsApp</a>
+
+        <h3>Per i clienti negli Stati Uniti 🇺🇸</h3>
+        <p>Pagamento con Zelle (usa la stessa email): <strong>difranco.rapha@gmail.com</strong></p>
+        <p>Mandami un messaggio e iniziamo!</p>
+        <a href="sms:+1XXXXXXXXXX" class="btn-yellow">Invia SMS a Rapha</a>
+      </div>
+
 </html>
