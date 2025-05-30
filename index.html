@@ -1,37 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OverFit US</title>
   <style>
     body {
-      background-color: #f7cb15;
-      color: #000;
-      font-family: sans-serif;
+      background-color: #111;
+      color: #f1f1f1;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 50px;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: #facc15; /* amarelo */
+    }
+    p {
+      margin-top: -10px;
+      color: #ccc;
+    }
+    .button {
+      display: inline-block;
+      background-color: #2563eb; /* azul */
+      color: #fff;
+      padding: 12px 24px;
+      margin: 15px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #1e40af;
+    }
+    .section {
+      margin: 40px 0;
     }
     img {
-      width: 300px;
-      max-width: 90%;
-      margin-bottom: 30px;
-    }
-    a.botao {
-      background: #000;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      margin-top: 20px;
-      display: inline-block;
+      max-width: 180px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <img src="logo-overfit.png" alt="Logo OverFit" />
-  <h1>Bem-vinda ao OverFit US</h1>
-  <p>Especialista em Reabilitação Física, Estética e Emagrecimento 🌴🇺🇸</p>
-  <a class="botao" href="https://calendly.com/raphaovera/30min">Agende sua Avaliação Gratuita</a>
+
+  <img src="logo.png" alt="Logo OverFit" />
+
+  <h1>Onde você está?</h1>
+  <p>Escolha sua localização para agendar suas aulas</p>
+
+  <div class="section">
+    <a href="#brasil" class="button">🇧🇷 Brasil</a>
+    <a href="#usa" class="button">🇺🇸 USA</a>
+  </div>
+
+  <div id="brasil" class="section">
+    <h2>Bem-vindo, Brasil 🇧🇷</h2>
+    <a href="https://calendly.com/raphaovera/30min" class="button">Avaliação gratuita</a>
+    <a href="https://meet.google.com/" class="button">Aula ao vivo no Google Meet</a>
+    <a href="https://wa.me/5512999999999" class="button">Agendar pelo WhatsApp</a>
+    <p><strong>Pagamento via PIX com 6% de desconto:</strong> <br> difranco.rapha@gmail.com</p>
+  </div>
+
+  <div id="usa" class="section">
+    <h2>Welcome, USA 🇺🇸</h2>
+    <a href="https://calendly.com/raphaovera/30min" class="button">Free Evaluation</a>
+    <a href="https://meet.google.com/" class="button">Live Session on Google Meet</a>
+    <a href="sms:+11234567890" class="button">Book via SMS</a>
+    <p><strong>Beach Workouts:</strong> <br> Sunrise or Sunset by reservation only</p>
+  </div>
+
 </body>
 </html>
